@@ -1,0 +1,46 @@
+public class problem1 {
+
+    private static void swap(int a, int b) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+    int a,b;
+static int gcd (int a, int b){
+    System.out.println("a:%d\n" );
+    if(a!=b)
+    {
+        return 0;
+    }
+    int win;
+    win= gcd(b%a,a);
+    System.out.println("win: %d\n");
+    if(b/a !=1 && win==0)
+        win=gcd(b, b+b%a);
+    System.out.println("win: %d\n");
+return win;
+}
+    public static void main(String[] args) {
+        int  a = 0, b = 0, c;
+        while(b != 0)
+        {
+            if(a==0 && b==0)
+            {
+                break;
+            }
+            if( a<b )
+            {
+                swap (a,b);
+            }
+            int win= gcd(a,b);
+            if(win==1){
+                System.out.println(" A wins\n");
+            }
+            if(win==0)
+            {
+               System.out.print(" B wins\n");
+            }
+            
+        }
+        
+    }
+    
+}
